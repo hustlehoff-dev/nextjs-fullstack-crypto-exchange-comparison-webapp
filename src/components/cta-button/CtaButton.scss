@@ -1,0 +1,11 @@
+@use "./../../../vars" as *;
+
+.cta-button {
+  background: $ctaBg;
+  color: $ctaColor;
+  padding: $ctaPadding;
+  border-radius: $border-radius;
+  font-weight: 500;
+  text-transform: uppercase;
+  //text-shadow: 0 0 2px white;
+}

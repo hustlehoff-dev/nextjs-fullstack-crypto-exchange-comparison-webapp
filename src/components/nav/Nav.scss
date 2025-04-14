@@ -1,0 +1,75 @@
+@use "./../../../vars" as *;
+
+.nav-wrapper {
+  position: sticky;
+  z-index: 50;
+  top: 0;
+}
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  gap: 2em;
+  height: 5em;
+  width: 100%;
+  padding: 0 2em;
+
+  position: relative;
+
+  .logo {
+    width: $logoSize;
+    height: $logoSize;
+    a {
+      img {
+        width: 100%;
+      }
+    }
+  }
+  .nav-links {
+    display: flex;
+    gap: 1em;
+    text-transform: uppercase;
+
+    li {
+    }
+  }
+  .cta-button {
+    position: absolute;
+    right: 2em;
+  }
+}
+
+// Podstawowy styl hover-underline-animation
+.hover-underline-animation {
+  display: inline-block;
+  position: relative;
+
+  // Efekt podkreślenia
+  &::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: $navUnderline;
+    transition: transform 0.25s ease-out;
+  }
+
+  // Efekt po najechaniu na element
+  &:hover::after {
+    transform: scaleX(1);
+  }
+
+  // Styl dla wersji "left"
+  &.left {
+    &::after {
+      transform-origin: bottom right;
+    }
+
+    &:hover::after {
+      transform-origin: bottom left;
+    }
+  }
+}
